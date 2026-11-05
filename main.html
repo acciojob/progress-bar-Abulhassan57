@@ -7,8 +7,64 @@
 </head>
 
 <body>
+	
 	<!-- the entire body must be written by student -->
     <script type="text/javascript" src="./script.js">
+		 const body=document.querySelector("body")
+        body.style.padding=0
+        body.style.margin=0
+        body.style.display="flex"
+        body.style.justifyContent="center"
+
+        createContainer()
+
+        function createContainer(){
+            const container=document.createElement("div")
+            container.style.height="80vh"
+            container.style.width="580px"
+            container.style.display="flex"
+            container.style.justifyContent="start"
+            container.style.flexWrap="wrap"
+            container.style.gap="20px"
+            container.style.alignItems="center"
+            container.style.position="absolute"
+
+            body.appendChild(container)
+
+            createCircles(container,5)
+            createProgressBar(container)
+
+        }
+
+        //create five circles
+        function createCircles(container,circleCount){
+            for(let i=0; i<circleCount; i++){
+                const circle=document.createElement("div")
+                circle.style.height="100px"
+                circle.style.width="100px"
+                circle.style.borderRadius="50%"
+                circle.style.border="1px solid green"
+                circle.style.position="absolute"
+                circle.style.left=`${i *120}px`
+                circle.style.backgroundColor="orange"
+                circle.style.zIndex=1
+
+                container.appendChild(circle)
+            }
+        }
+
+        //create progress bar
+        function createProgressBar(parent){
+            const pb=document.createElement("div")
+            pb.style.height="10px"
+            pb.style.width="580px"
+            pb.style.border="1px solid green"
+            pb.style.position="absolute"
+
+            parent.appendChild(pb)
+        }
+
+
 </script>
 
 </body>
